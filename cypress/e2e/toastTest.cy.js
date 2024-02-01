@@ -1,6 +1,8 @@
 let pageData = [{
   //case1
   position: "top-right",
+  positionClass: "#nb-option-24",
+  typeClass: "#nb-option-34",
   type: "info",
   title: "title1",
   content: "content1",
@@ -11,6 +13,8 @@ let pageData = [{
 },{
   //case2
   position: "bottom-right",
+  positionClass: "#nb-option-27",
+  typeClass: "#nb-option-32",
   type: "primary",
   title: "title2",
   content: "content2",
@@ -21,6 +25,8 @@ let pageData = [{
 }, {
   //case3
   position: "top-start",
+  positionClass: "#nb-option-29",
+  typeClass: "#nb-option-35",
   type: "warning",
   title: "title3",
   content: "content3",
@@ -31,6 +37,8 @@ let pageData = [{
 },{
   //case4
   position: "bottom-start",
+  positionClass: "#nb-option-31",
+  typeClass: "#nb-option-36",
   type: "danger",
   title: "title4",
   content: "content4",
@@ -41,55 +49,65 @@ let pageData = [{
 }]
 
 
-describe("beforeEach method", () => {
-  before(() => {
-    cy.log('Open main page');
-    cy.visit('https://sanitarskyi-ngx-admin.herokuapp.com/');
-    cy.log('Open Dark Theme');
-    cy.get('[alt="Material Dark Theme"]').click();
-    cy.log('Open Modal & Overlays page');
-    cy.get('[title="Modal & Overlays"]').click();
-    cy.log('Select Toastr');
-    cy.get('[href="/pages/modal-overlays/toastr"]').click();
+ describe("beforeEach method", () => {
+beforeEach(() => {
+  cy.log('Open main page');
+ cy.visit('https://sanitarskyi-ngx-admin.herokuapp.com/');
+cy.log('Open Dark Theme');
+  cy.get('[alt="Material Dark Theme"]').click();
+cy.log('Open Modal & Overlays page');
+ cy.get('[title="Modal & Overlays"]').click();
+ cy.log('Select Toast');
+ cy.get('[href="/pages/modal-overlays/toastr"]').click();
 
-     })
+   })
 
-  it('Expect', () => {
 
-    cy.get('nb-card-body button').first().click();
-    cy.get('#nb-option-24').click().then( position =>{
-      expect(position).to.have.prop('textContent','top-right')
-      })
 
-    cy.get('nb-card-body button').last().click();
-    cy.get('#nb-option-34').click().then( type =>{
-      expect(type).to.have.prop('textContent','info')
-        })
+   pageData.forEach(pageData => {
+     it('Expect', () => {
 
-     cy.get('[name="title"]').clear().type('Title1').then( title =>{
-       expect(title).to.have.value('Title1')
-      })
 
-    cy.get('[name="content"]').clear().type('Content1').then( content =>{
-       expect(content).to.have.value('Content1')
-        })
+         cy.get('nb-card-body button').first().click();
+       cy.get(`${pageData.positionClass}`).click().then( position =>{
+         expect(position).to.have.prop('textContent', `${pageData.position}`)
+       })
 
-    cy.get('[name="timeout"]').clear().type('200000').then( time =>{
-      expect(time).to.have.value('200000')
-    })
+       cy.get('nb-card-body button').last().click();
+       cy.get(`${pageData.typeClass}`).click().then( type =>{
+         expect(type).to.have.prop('textContent', `${pageData.type}`)
+       })
+
+       cy.get('[name="title"]').clear().type(`${pageData.title}`).then( title =>{
+         expect(title).to.have.value(`${pageData.title}`)
+       })
+
+       cy.get('[name="content"]').clear().type(`${pageData.content}`).then( content =>{
+         expect(content).to.have.value(`${pageData.content}`)
+       })
+
+       cy.get('[name="timeout"]').clear().type(`${pageData.time}`).then( time =>{
+         expect(time).to.have.value(`${pageData.time}`)
+       })
 
 //result
 
-    cy.get('nb-card-footer button').first().click();
-    cy.get('nb-toast').should('have.css', 'background-color', 'rgb(4, 149, 238)');
-    cy.get('nb-toast').should('have.class', 'ng-tns-c209-54');
-    cy.get('nb-toast path').should('have.prop', 'outerHTML', '<path d=\"M17 9A5 5 0 0 0 7 9a1 1 0 0 0 2 0 3 3 0 1 1 3 3 1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-1.1A5 5 0 0 0 17 9z"></path>');
-    cy.get('nb-toast> .content-container').should("contain.text", 'Title1Content1')
+       cy.get('nb-card-footer button').first().click();
+       cy.get('nb-toast').should('have.css', 'background-color', `${pageData.toastColor}`);
+       cy.get('nb-toast').should('have.class', `${pageData.toastPosition}`);
+       cy.get('nb-toast path').should('have.prop', 'outerHTML', `${pageData.toastIcon}`);
+       cy.get('nb-toast> .content-container').should("contain.text", `${pageData.title}${pageData.content}`)
 
 
-  })
+     })
+
+   })
 
 })
+
+
+
+//})
 
 
 
