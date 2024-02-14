@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9056e278-9c64-498e-b6fb-4595d1031bea" name="Changes" comment="" />
+    <list default="true" id="9056e278-9c64-498e-b6fb-4595d1031bea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/e2e/toastTest.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/toastTest.cy.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2blnoWtujBHsMkxzhGnlkSnltPV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/AlonaD/OneDrive - Revenue Grid/Desktop/G7-Projects/js-hw-assertions",
     "node.js.detected.package.eslint": "true",
@@ -44,7 +57,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706798707666</updated>
-      <workItem from="1706798708740" duration="303000" />
+      <workItem from="1706798708740" duration="2601000" />
+      <workItem from="1706801966841" duration="16295000" />
+      <workItem from="1706818449044" duration="17000" />
+      <workItem from="1706818832680" duration="3926000" />
+      <workItem from="1706822972778" duration="1129000" />
+      <workItem from="1706887871637" duration="543000" />
+      <workItem from="1706888514778" duration="8000" />
+      <workItem from="1706889134010" duration="166000" />
+      <workItem from="1706889753276" duration="1130000" />
+      <workItem from="1706891696304" duration="72000" />
+      <workItem from="1706960705041" duration="2168000" />
+      <workItem from="1707045158640" duration="6335000" />
+      <workItem from="1707073252672" duration="14000" />
+      <workItem from="1707154929541" duration="12000" />
+      <workItem from="1707162270553" duration="646000" />
     </task>
     <servers />
   </component>
